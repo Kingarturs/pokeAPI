@@ -13,7 +13,8 @@ This API works just as a sort of intermediary between the PokeAPI found in https
 5. Navigate to the main folder and run the project with `go run main.go`
 
 ### How to run the tests
-Just run the command `go test` on your terminal
+1. Navigate to the tests folder
+2. Run the command `go test` on your terminal
 
 ---
 
@@ -26,6 +27,11 @@ This endpoint returns a simple string with a "Hello, World"
 
 #### Pokemon list
 ```GET /```
+
+- query parameters
+  - `offset` - Same as the original PokeAPI is the offset of the queried pokemon
+  - `limit` - The size limit of the array of results
+
 This endpoint returns exactly the same response structure as the original PokeAPI, it returns the following info:
 - `count` - The number of results in the query
 - `next` - The url for the next page of results
