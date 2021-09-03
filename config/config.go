@@ -11,3 +11,10 @@ func GetPort() string {
 func GetGinMode() string {
 	return os.Getenv("GIN_MODE")
 }
+
+type PokeResponse struct {
+	Count    int           `json:"count"`
+	Next     string        `json:"next"`
+	Previous string        `json:"previous"`
+	Results  []interface{} `json:"results"`
+}

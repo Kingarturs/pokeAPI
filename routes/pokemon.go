@@ -9,14 +9,9 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-)
 
-type PokeResponse struct {
-	Count    int           `json:"count"`
-	Next     string        `json:"next"`
-	Previous string        `json:"previous"`
-	Results  []interface{} `json:"results"`
-}
+	"pokeAPI/config"
+)
 
 func Pokemon() gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -48,7 +43,7 @@ func Pokemon() gin.HandlerFunc {
 			return
 		}
 
-		var result PokeResponse
+		var result config.PokeResponse
 		json.Unmarshal(body, &result)
 
 		// Remove the real API url from the next and previous keys to direct response to my server
